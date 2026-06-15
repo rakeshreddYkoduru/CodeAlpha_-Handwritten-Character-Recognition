@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Character Recognition</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-beams"></div>
+    <div class="container">
+        <header>
+            <h1>Character <span class="gradient-text">A.I.</span></h1>
+            <p>Handwritten character recognition using Deep Learning</p>
+        </header>
+
+        <main>
+            <div class="card canvas-card">
+                <div class="canvas-container">
+                    <canvas id="canvas" width="400" height="400"></canvas>
+                    <div class="canvas-overlay" id="canvasOverlay">Draw here</div>
+                </div>
+                <div class="controls">
+                    <button id="clearBtn" class="btn secondary">Clear Canvas</button>
+                    <button id="predictBtn" class="btn primary">Predict Now</button>
+                </div>
+            </div>
+
+            <div class="card result-card">
+                <h3>Prediction Result</h3>
+                <div id="resultDisplay" class="result-display">
+                    <span class="placeholder">?</span>
+                </div>
+                <div class="confidence-container">
+                    <div class="confidence-label">
+                        <span>Confidence</span>
+                        <span id="confidenceValue">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="confidenceBar" class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div class="top-predictions">
+                    <h4>Top Suggestions</h4>
+                    <ul id="topList">
+                        <li><span class="empty">Draw something first</span></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Convolutional Neural Networks & PyTorch</p>
+        </footer>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
